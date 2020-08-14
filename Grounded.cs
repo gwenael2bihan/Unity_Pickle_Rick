@@ -18,15 +18,13 @@ public class Grounded : MonoBehaviour
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision: " + collision.collider.tag);
-        if (collision.collider.tag == "Tilemap") {
+        if (collision.collider.tag == "Ground") {
             Player.GetComponent<character_controller>().isGrounded = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
-        Debug.Log("Collision2: " + collision.collider.tag);
-        if (collision.collider.tag == "Tilemap") {
+        if (collision.collider.tag == "Ground") {
             Player.GetComponent<character_controller>().isGrounded = false;
         }
     }

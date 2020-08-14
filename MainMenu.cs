@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
    public void PlayGame () {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FindObjectOfType<AudioManager>().Play("PlayButton");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
    }
+
+    public void ButtonSound() {
+        FindObjectOfType<AudioManager>().Play("Button");
+    }
 
    public void QuitGame () {
        Debug.Log("QUIT!!");
